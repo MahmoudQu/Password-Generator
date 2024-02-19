@@ -8,7 +8,6 @@ public class Main {
         int numOfPassword= input.nextInt();
         input.nextLine();
         PasswordGenerator passwordGenerator=new PasswordGenerator();
-
         System.out.println("what type of password you want to generate? (Numbers only, All)");
         String passwordType= input.nextLine();
 

@@ -19,7 +19,7 @@ public class PasswordGenerator {
         while(!isValidPassword(generatedPassword));
         return generatedPassword;
     }
-    public String shufflePassword(String password){
+    private String shufflePassword(String password){
         List<Character>chars=new ArrayList<>();
         for(char c : password.toCharArray()){
             chars.add(c);
