@@ -10,20 +10,21 @@ public class Main {
         input.nextLine();
         System.out.println("what type of password you want to generate? (Numbers only, All)");
         String passwordType= input.nextLine();
-        //PasswordGenerator passwordGenerator=
+        PasswordGenerator passwordGenerator= null;
         while(numOfPassword>0){
             String password;
             if(passwordType.equals("Numbers only")){
-                PasswordGenerator passwordGenerator=new NumericPasswordGenerator();
+                passwordGenerator=new NumericPasswordGenerator();
                 password = passwordGenerator.generatedPassword();
                 System.out.println(password);
             }
             else{
-                PasswordGenerator passwordGenerator=new AllPasswordGenerator();
+                passwordGenerator=new AllPasswordGenerator();
                 password = passwordGenerator.generatedPassword();
                 System.out.println(password);
             }
             numOfPassword--;
         }
+        input.close();
     }
 }
