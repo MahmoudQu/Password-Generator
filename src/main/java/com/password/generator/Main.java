@@ -1,4 +1,5 @@
 package com.password.generator;
+import org.apache.commons.lang3.RandomStringUtils;
 import java.util.Scanner;
 
 public class Main {
@@ -7,18 +8,19 @@ public class Main {
         System.out.println("How many password you want to generate?");
         int numOfPassword= input.nextInt();
         input.nextLine();
-        PasswordGenerator passwordGenerator=new PasswordGenerator();
         System.out.println("what type of password you want to generate? (Numbers only, All)");
         String passwordType= input.nextLine();
-
+        //PasswordGenerator passwordGenerator=
         while(numOfPassword>0){
             String password;
             if(passwordType.equals("Numbers only")){
-                password = passwordGenerator.numericPassGenerator();
+                PasswordGenerator passwordGenerator=new NumericPasswordGenerator();
+                password = passwordGenerator.generatedPassword();
                 System.out.println(password);
             }
             else{
-                password = passwordGenerator.allPasswordGenerator();
+                PasswordGenerator passwordGenerator=new AllPasswordGenerator();
+                password = passwordGenerator.generatedPassword();
                 System.out.println(password);
             }
             numOfPassword--;
